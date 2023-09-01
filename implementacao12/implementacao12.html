@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Implementação 12</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="title">
+        <h1>Implementação 12</h1>
+    </div>
+    <br>
+    <div id="sideBar">
+        <a href="../index.html"><button class="btn btn-danger btn-sm">Voltar</button></a>
+        <br>
+        <br>
+        <br>
+        <label for="fileinput" class="custom-file">
+            +
+        </label>
+        <input type="file" accept="image/*,.pgm" id="fileinput" />
+        <br>
+        <br>
+        <label>Valor de T </label>
+        <input type="range" id="tvalue" aria-describedby="t" value="1" min="100" max="250">
+        <small id="t" class="form-text text-muted">100</small> <br><br>
+        <button class="btn btn-info" id="lg">Global</button>
+        <button class="btn btn-info" id="lm">Local Média</button>
+        <button class="btn btn-info" id="lme">Local Mediana</button>
+        <button class="btn btn-info" id="maxmin">Local Max-Min</button>
+        <br>
+        <label>Valor de N </label>
+        <input type="range" id="nvalue" aria-describedby="n" value="10" min="10" max="100">
+        <small id="n" class="form-text text-muted">10</small> <br><br>
+        <label>Valor de K </label>
+        <input type="range" id="kvalue" aria-describedby="k" step="0.1" value="-1" min="-1" max="1">
+        <small id="k" class="form-text text-muted">-1</small> <br><br>
+        <button class="btn btn-info" id="nb">Niblack</button>
+        <button class="btn btn-info" id="sg">Segmentação Região</button>
+    </div>
+
+    <div id="canvasDiv">
+        <canvas id="canvas" width="0" height="0"></canvas>
+        <canvas id="lgc" width="0" height="0"></canvas>
+        <canvas id="lmc" width="0" height="0"></canvas>
+        <canvas id="lmec" width="0" height="0"></canvas>
+        <canvas id="maxminc" width="0" height="0"></canvas>
+        <canvas id="nbc" width="0" height="0"></canvas>
+        <canvas id="sgc" width="0" height="0"></canvas>
+    </div>
+
+    <script src="implementacao12.js"></script>
+</body>
+
+</html>

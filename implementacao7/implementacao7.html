@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Implementação 7</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="title">
+        <h1>Implementação 7</h1>
+    </div>
+    <br>
+    <div id="sideBar">
+        <a href="../index.html"><button class="btn btn-danger btn-sm">Voltar</button></a>
+        <br>
+        <br>
+        <br>
+        <label for="fileinput" class="custom-file">
+            +
+        </label>
+        <input type="file" accept="image/*,.pgm" id="fileinput" />
+        <br>
+        <br>
+        <button class="btn btn-info" id="fatiar">Fatiamento</button><br>
+        <label>Digitar fatias</label>
+        <input type="text" id="escolher"><br><br>
+        <button class="btn btn-info" id="juntou">Juntar</button>
+
+    </div>
+
+    <div id="canvasDiv">
+        <canvas id="canvas" width="0" height="0"></canvas>
+        <canvas id="fatia1" width="0" height="0"></canvas>
+        <canvas id="fatia2" width="0" height="0"></canvas>
+        <canvas id="fatia3" width="0" height="0"></canvas>
+        <canvas id="fatia4" width="0" height="0"></canvas>
+        <canvas id="fatia5" width="0" height="0"></canvas>
+        <canvas id="fatia6" width="0" height="0"></canvas>
+        <canvas id="fatia7" width="0" height="0"></canvas>
+        <canvas id="fatia8" width="0" height="0"></canvas>
+        <canvas id="juntar" width="0" height="0"></canvas>
+
+    </div>
+
+    <script src="implementacao7.js"></script>
+</body>
+
+</html>

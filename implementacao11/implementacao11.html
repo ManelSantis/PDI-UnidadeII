@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Implementação 11</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="title">
+        <h1>Implementação 11</h1>
+    </div>
+    <br>
+    <div id="sideBar">
+        <a href="../index.html"><button class="btn btn-danger btn-sm">Voltar</button></a>
+        <br>
+        <br>
+        <br>
+        <label for="fileinput" class="custom-file">
+            +
+        </label>
+        <input type="file" accept="image/*,.pgm" id="fileinput" />
+        <br>
+        <br>
+        <label>Valor de T </label>
+        <input type="range" id="tvalue" aria-describedby="t" value="1" min="1" max="100">
+        <small id="t" class="form-text text-muted">1</small> <br><br>
+        <button class="btn btn-info" id="ponto">Detecção de Ponto</button>
+        <button class="btn btn-info" id="ho">Reta Horizontal</button>
+        <button class="btn btn-info" id="ve">Reta Vertical</button>
+        <button class="btn btn-info" id="qu">Reta 45°</button>
+        <button class="btn btn-info" id="ce">Reta 135°</button>
+        <button class="btn btn-info" id="ro">Roberts</button>
+        <button class="btn btn-info" id="rc">Roberts Cruzado</button>
+        <button class="btn btn-info" id="prewitt">Prewitt</button>
+        <button class="btn btn-info" id="sobel">Sobel</button>
+        <button class="btn btn-info" id="kirsh">Kirsh</button>
+        <button class="btn btn-info" id="robson">Robson</button>
+        <button class="btn btn-info" id="frei">Frei-Chen</button>
+        <button class="btn btn-info" id="laplaciano">Laplaciano</button>
+    </div>
+
+    <div id="canvasDiv">
+        <canvas id="canvas" width="0" height="0"></canvas>
+        <canvas id="pontoc" width="0" height="0"></canvas>
+        <canvas id="hoc" width="0" height="0"></canvas>
+        <canvas id="vec" width="0" height="0"></canvas>
+        <canvas id="quc" width="0" height="0"></canvas>
+        <canvas id="cec" width="0" height="0"></canvas>
+        <canvas id="roc" width="0" height="0"></canvas>
+        <canvas id="rcc" width="0" height="0"></canvas>
+        <canvas id="prx" width="0" height="0"></canvas>
+        <canvas id="pry" width="0" height="0"></canvas>
+        <canvas id="prm" width="0" height="0"></canvas>
+        <canvas id="sox" width="0" height="0"></canvas>
+        <canvas id="soy" width="0" height="0"></canvas>
+        <canvas id="som" width="0" height="0"></canvas>
+        <canvas id="ki" width="0" height="0"></canvas>
+        <canvas id="rob" width="0" height="0"></canvas>
+        <canvas id="frei1" width="0" height="0"></canvas>
+        <canvas id="frei2" width="0" height="0"></canvas>
+        <canvas id="frei3" width="0" height="0"></canvas>
+        <canvas id="frei4" width="0" height="0"></canvas>
+        <canvas id="frei5" width="0" height="0"></canvas>
+        <canvas id="frei6" width="0" height="0"></canvas>
+        <canvas id="frei7" width="0" height="0"></canvas>
+        <canvas id="frei8" width="0" height="0"></canvas>
+        <canvas id="frei9" width="0" height="0"></canvas>
+        <canvas id="lap1" width="0" height="0"></canvas>
+        <canvas id="lap2" width="0" height="0"></canvas>
+    </div>
+
+    <script src="implementacao11.js"></script>
+</body>
+
+</html>

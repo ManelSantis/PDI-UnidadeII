@@ -92,8 +92,8 @@ lm.onclick = function () {
     newImgData.data[i] = imgData.data[i]
   }
 
-  let tamX = 10
-  let tamY = 10
+  let tamX = 20
+  let tamY = 20
 
   let coeficientes = []
 
@@ -103,9 +103,8 @@ lm.onclick = function () {
     }
   }
 
-  for (let y = 0; y < srcImage.height; y++) {
-    for (let x = 0; x < srcImage.width; x++) {
-      let pixel = getPixelIndex(x, y)
+  for (let y = 0; y < srcImage.height; y+=tamY) {
+    for (let x = 0; x < srcImage.width; x+=tamX) {
 
       let reds = []
       let greens = []
@@ -126,10 +125,17 @@ lm.onclick = function () {
       let limiarG = calcularMediana(greens, (tamX * tamY))
       let limiarB = calcularMediana(blues, (tamX * tamY))
 
-      newImgData.data[pixel] = (newImgData.data[pixel] < limiarR ? 0 : 255)
-      newImgData.data[pixel + 1] = (newImgData.data[pixel + 1] < limiarG ? 0 : 255)
-      newImgData.data[pixel + 2] = (newImgData.data[pixel + 2] < limiarB ? 0 : 255)
-      newImgData.data[pixel + 3] = 255
+      for (const [dx, dy] of coeficientes) {
+        const newX = x + dx
+        const newY = y + dy
+        if (newX >= 0 && newX < srcImage.width && newY >= 0 && newY < srcImage.height) {
+          let pixel = getPixelIndex(newX, newY)
+          newImgData.data[pixel] = (newImgData.data[pixel] < limiarR ? 0 : 255)
+          newImgData.data[pixel + 1] = (newImgData.data[pixel + 1] < limiarG ? 0 : 255)
+          newImgData.data[pixel + 2] = (newImgData.data[pixel + 2] < limiarB ? 0 : 255)
+          newImgData.data[pixel + 3] = 255
+        }
+      }
 
     }
   }
@@ -164,9 +170,8 @@ lme.onclick = function () {
     }
   }
 
-  for (let y = 0; y < srcImage.height; y++) {
-    for (let x = 0; x < srcImage.width; x++) {
-      let pixel = getPixelIndex(x, y)
+  for (let y = 0; y < srcImage.height; y+=tamY) {
+    for (let x = 0; x < srcImage.width; x+=tamX) {
 
       let reds = []
       let greens = []
@@ -187,10 +192,17 @@ lme.onclick = function () {
       let limiarG = calcularMedia(greens, (tamX * tamY))
       let limiarB = calcularMedia(blues, (tamX * tamY))
 
-      newImgData.data[pixel] = (newImgData.data[pixel] < limiarR ? 0 : 255)
-      newImgData.data[pixel + 1] = (newImgData.data[pixel + 1] < limiarG ? 0 : 255)
-      newImgData.data[pixel + 2] = (newImgData.data[pixel + 2] < limiarB ? 0 : 255)
-      newImgData.data[pixel + 3] = 255
+      for (const [dx, dy] of coeficientes) {
+        const newX = x + dx
+        const newY = y + dy
+        if (newX >= 0 && newX < srcImage.width && newY >= 0 && newY < srcImage.height) {
+          let pixel = getPixelIndex(newX, newY)
+          newImgData.data[pixel] = (newImgData.data[pixel] < limiarR ? 0 : 255)
+          newImgData.data[pixel + 1] = (newImgData.data[pixel + 1] < limiarG ? 0 : 255)
+          newImgData.data[pixel + 2] = (newImgData.data[pixel + 2] < limiarB ? 0 : 255)
+          newImgData.data[pixel + 3] = 255
+        }
+      }
 
     }
   }
@@ -225,9 +237,8 @@ maxmin.onclick = function () {
     }
   }
 
-  for (let y = 0; y < srcImage.height; y++) {
-    for (let x = 0; x < srcImage.width; x++) {
-      let pixel = getPixelIndex(x, y)
+  for (let y = 0; y < srcImage.height; y+=tamY) {
+    for (let x = 0; x < srcImage.width; x+=tamX) {
 
       let reds = []
       let greens = []
@@ -248,10 +259,17 @@ maxmin.onclick = function () {
       let limiarG = (calcularMaximo(greens) + calcularMinimo(greens)) / 2
       let limiarB = (calcularMaximo(blues) + calcularMinimo(blues)) / 2
 
-      newImgData.data[pixel] = (newImgData.data[pixel] < limiarR ? 0 : 255)
-      newImgData.data[pixel + 1] = (newImgData.data[pixel + 1] < limiarG ? 0 : 255)
-      newImgData.data[pixel + 2] = (newImgData.data[pixel + 2] < limiarB ? 0 : 255)
-      newImgData.data[pixel + 3] = 255
+      for (const [dx, dy] of coeficientes) {
+        const newX = x + dx
+        const newY = y + dy
+        if (newX >= 0 && newX < srcImage.width && newY >= 0 && newY < srcImage.height) {
+          let pixel = getPixelIndex(newX, newY)
+          newImgData.data[pixel] = (newImgData.data[pixel] < limiarR ? 0 : 255)
+          newImgData.data[pixel + 1] = (newImgData.data[pixel + 1] < limiarG ? 0 : 255)
+          newImgData.data[pixel + 2] = (newImgData.data[pixel + 2] < limiarB ? 0 : 255)
+          newImgData.data[pixel + 3] = 255
+        }
+      }
 
     }
   }
@@ -278,7 +296,7 @@ nb.onclick = function () {
   let tamX = parseInt(nvalue.value)
   let tamY = parseInt(nvalue.value)
 
-  let aux = parseInt(kvalue.value)
+  let aux = parseFloat(kvalue.value)
 
   let coeficientes = []
 
@@ -288,9 +306,8 @@ nb.onclick = function () {
     }
   }
 
-  for (let y = 0; y < srcImage.height; y++) {
-    for (let x = 0; x < srcImage.width; x++) {
-      let pixel = getPixelIndex(x, y)
+  for (let y = 0; y < srcImage.height; y += tamY) {
+    for (let x = 0; x < srcImage.width; x += tamX) {
 
       let reds = []
       let greens = []
@@ -311,10 +328,17 @@ nb.onclick = function () {
       let limiarG = calcularMedia(greens, greens.length) + calcularDesvio(greens, greens.length) * aux
       let limiarB = calcularMedia(blues, blues.length) + calcularDesvio(blues, blues.length) * aux
 
-      newImgData.data[pixel] = (newImgData.data[pixel] < limiarR ? 0 : 255)
-      newImgData.data[pixel + 1] = (newImgData.data[pixel + 1] < limiarG ? 0 : 255)
-      newImgData.data[pixel + 2] = (newImgData.data[pixel + 2] < limiarB ? 0 : 255)
-      newImgData.data[pixel + 3] = 255
+      for (const [dx, dy] of coeficientes) {
+        const newX = x + dx
+        const newY = y + dy
+        if (newX >= 0 && newX < srcImage.width && newY >= 0 && newY < srcImage.height) {
+          let pixel = getPixelIndex(newX, newY)
+          newImgData.data[pixel] = (newImgData.data[pixel] < limiarR ? 0 : 255)
+          newImgData.data[pixel + 1] = (newImgData.data[pixel + 1] < limiarG ? 0 : 255)
+          newImgData.data[pixel + 2] = (newImgData.data[pixel + 2] < limiarB ? 0 : 255)
+          newImgData.data[pixel + 3] = 255
+        }
+      }
 
     }
   }
@@ -334,7 +358,7 @@ let sgimg = new Image
 sg.onclick = function () {
   let newImgData = new ImageData(srcImage.width, srcImage.height)
 
-  let values = [155, 55, 100, 28, 200, 5]
+  let values = [155, 55, 100, 28, 200, 5, 75]
 
   let colors = [
     [213, 38, 184],
@@ -342,7 +366,8 @@ sg.onclick = function () {
     [216, 7, 15],
     [35, 216, 7],
     [0, 212, 177],
-    [249, 255, 31]
+    [249, 255, 31],
+    [255, 255, 255]
   ]
 
   for (let i = 0; i < imgData.data.length; i += 4) {

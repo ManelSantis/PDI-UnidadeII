@@ -112,46 +112,6 @@ fatiar.onclick = function () {
   }
 }
 
-const juntou = document.getElementById('juntou')
-const escolher = document.getElementById('escolher')
-const juntar = document.getElementById('juntar')
-const jun =  juntar.getContext('2d')
-let juntas = new Image
-
-juntou.onclick = function () {
-
-  for (let i = 0; i < 8; i++) {
-    bitPlanes[i] = new Uint8ClampedArray(imgData.data.length);
-  }
-
-  for (let i = 0; i < imgData.data.length; i += 4) {
-    let pixelValue = (imgData.data[i] + imgData.data[i + 1] + imgData.data[i + 2]) / 3
-    for (let bit = 0; bit < 8; bit++) {
-      bitPlanes[bit][i] = (pixelValue >> bit) & 1
-    }
-  }
-
-  let fatiasEscolhidas = escolher.value.split(',')
-  let newImgData = new ImageData(srcImage.width, srcImage.height)
-
-  for (let i = 0; i < fatiasEscolhidas.length; i++) {
-    let bit = fatiasEscolhidas[i]
-    for (let j = 0; j < imgData.data.length; i += 4) {
-      let bitValue = bitPlanes[bit][j] * 255
-      newImgData.data[i] = bitValue
-      newImgData.data[i + 1] = bitValue
-      newImgData.data[i + 2] = bitValue
-      newImgData.data[i + 3] = 255
-    }
-  }
-
-  juntas = imgDataToImg(newImgData, srcImage.width, srcImage.height)
-  juntar.width = juntas.width
-  juntar.height = juntas.height
-  jun.drawImage(juntas, 0, 0, juntas.width, juntas.height)
-
-}
-
 function imgDataToImg(imagedata, w, h) {
   var canvas = document.createElement('canvas')
   var ctx = canvas.getContext('2d')

@@ -392,7 +392,7 @@ reforco.onclick = function () {
   let greens = []
   let blues = []
 
-  var aux = parseInt(avalue.value)
+  var aux = parseFloat(avalue.value)
 
   let mascara = [-1, -1, -1,
     -1, (9*aux)-1, -1,

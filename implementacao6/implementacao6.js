@@ -174,7 +174,7 @@ const gama = document.getElementById('gama')
 const valueGama= document.getElementById('valueGama')
 
 gam.onclick = function () {
-  let gamaValue = parseInt(gama.value)
+  let gamaValue = parseFloat(gama.value)
 
   let newImgData = new ImageData(srcImage.width, srcImage.height)
   for (let i = 0; i < imgData.data.length; i += 4) {
